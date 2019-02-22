@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list-item',
@@ -9,4 +10,10 @@ import { Product } from 'src/app/models/product.model';
 export class ProductListItemComponent {
   @Input()
   product: Product;
+
+  constructor(private router: Router) {}
+
+  @HostListener('click') onClick() {
+    this.router.navigate(['/catalog', this.product.id]);
+  }
 }

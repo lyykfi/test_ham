@@ -12,6 +12,13 @@ import { ProductService } from './services/product.service';
 import { ProductListItemComponent } from './components/product-list/product-list-item/product-list-item.component';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -19,6 +26,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     ProductListComponent,
     ProductListItemComponent,
     CatalogPageComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +35,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     HttpClientModule,
     MatListModule,
     MatSidenavModule,
+    RouterModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
   ],
   providers: [
     ConfigService,

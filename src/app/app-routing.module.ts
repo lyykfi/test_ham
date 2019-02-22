@@ -7,6 +7,9 @@ const routes: Routes = [
     path: 'catalog',
     component: CatalogPageComponent,
   }, {
+    path: 'catalog/:id',
+    component: CatalogPageComponent,
+  }, {
     path: '',
     redirectTo: '/catalog',
     pathMatch: 'full'

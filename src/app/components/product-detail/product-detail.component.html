@@ -1,0 +1,15 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <img src='{{product.thumbnail}}' mat-card-avatar class="avatar" />
+    <mat-card-title>{{product.title}}</mat-card-title>
+    <mat-card-subtitle>{{product.state}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{product.description}}</p>
+    <mat-list class="attachments">
+      <mat-list-item *ngFor="let attachment of product.attachments;">
+        <div><img src="{{attachment}}" /></div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
