@@ -5,13 +5,28 @@ import { Config } from '../models/config.model';
 import camelcaseKeys from 'camelcase-keys';
 import { Product } from '../models/product.model';
 
+/**
+ * ProductService service.
+ */
 @Injectable()
 export class ProductService {
+  /**
+   * An array with products.
+   */
   productList: Product[] = null;
 
+  /**
+   * constructor.
+   * @param http - An object instance of HttpClient.
+   * @param configService - An object instance of ConfigService.
+   */
   constructor(private http: HttpClient,
               private configService: ConfigService) {}
 
+  /**
+   * Gets product by id.
+   * @param id - product id.
+   */
   getProductById(id: number): Promise<Product> {
     return new Promise(async (resolve, reject) => {
       await this.getAll();
@@ -19,6 +34,9 @@ export class ProductService {
     });
   }
 
+  /**
+   * Gets all products.
+   */
   getAll(): Promise<Product[]> {
     return new Promise((resolve, reject) => {
       if (this.productList) {

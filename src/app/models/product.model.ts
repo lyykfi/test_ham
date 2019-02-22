@@ -1,3 +1,6 @@
+/**
+ * An product model.
+ */
 export class Product {
   id: number;
   title: string;
@@ -14,6 +17,9 @@ export class Product {
   createdAt: string;
 }
 
+/**
+ * An product counter.
+ */
 export class ProductCounter {
   messagesTotal: number;
   messagesUnread: number;
