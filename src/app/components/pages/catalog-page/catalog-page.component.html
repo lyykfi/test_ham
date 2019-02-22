@@ -2,8 +2,17 @@
   <mat-sidenav
     #snav
     [opened]='opened'
-    [mode]="mode">
-    <app-product-list [products]='products'></app-product-list>
+    [mode]="mode"
+    (click)="onCloseSnav(snav)">
+    <button 
+      class="close" 
+      mat-icon-button 
+      (click)="snav.close()">
+      <mat-icon>close</mat-icon>
+    </button>
+    <app-product-list
+      [products]='products'
+      [selectedProduct]='selectedProduct'></app-product-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>

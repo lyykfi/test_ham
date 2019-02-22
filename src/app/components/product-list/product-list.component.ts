@@ -10,5 +10,6 @@ export class ProductListComponent {
   @Input()
   products: Product[];
 
-  error: string;
+  @Input()
+  selectedProduct: Product;
 }

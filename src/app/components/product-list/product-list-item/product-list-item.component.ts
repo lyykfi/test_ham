@@ -1,4 +1,4 @@
-import { Component, Input, HostListener } from '@angular/core';
+import { Component, Input, HostListener, HostBinding } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { Router } from '@angular/router';
 
@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
 export class ProductListItemComponent {
   @Input()
   product: Product;
+
+  @Input()
+  @HostBinding('class.is-active') isActive = false;
 
   constructor(private router: Router) {}
 

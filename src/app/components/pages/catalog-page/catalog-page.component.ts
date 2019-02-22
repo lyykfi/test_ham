@@ -49,4 +49,10 @@ export class CatalogPageComponent implements OnInit {
   onResize(event) {
     this.mode = !this.mobileQuery.matches ? SideBarStates.side : SideBarStates.over;
   }
+
+  onCloseSnav(snav) {
+    if (snav.mode === SideBarStates.over) {
+      snav.close();
+    }
+  }
 }
