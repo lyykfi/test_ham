@@ -1,14 +1,24 @@
 <mat-card class="example-card">
   <mat-card-header>
     <img src='{{product.thumbnail}}' mat-card-avatar class="avatar" />
-    <mat-card-title>{{product.title}}</mat-card-title>
-    <mat-card-subtitle>{{product.state}}</mat-card-subtitle>
+    <mat-card-title>
+      <span class='title'>{{product.title}}</span>
+      <mat-icon class="awarded" 
+                *ngIf='product.isAwarded'>thumb_up_alt</mat-icon>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <span class="city">{{product.city}}</span>
+      <span>, </span>
+      <span class="state">{{product.state}}</span>
+    </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <p>{{product.description}}</p>
+    <p class="description">{{product.description}}</p>
     <mat-list class="attachments">
       <mat-list-item *ngFor="let attachment of product.attachments;">
-        <div><img src="{{attachment}}" /></div>
+        <div>
+          <img src="{{attachment}}" class="attachment" />
+        </div>
       </mat-list-item>
     </mat-list>
   </mat-card-content>

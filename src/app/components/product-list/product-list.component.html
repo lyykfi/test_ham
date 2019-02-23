@@ -1,7 +1,8 @@
 <mat-nav-list class="product-list">
   <app-product-list-item
+    class='product-list-item-container'
     *ngFor="let product of products;"
     [product]="product"
-    [isActive]='selectedProduct.id == product.id'>
+    [isActive]='selectedProduct && selectedProduct.id == product.id'>
   </app-product-list-item>
 </mat-nav-list>

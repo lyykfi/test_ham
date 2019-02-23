@@ -1,4 +1,4 @@
-<mat-list-item class="product-list-item">
-  <img src="{{product.thumbnail}}" />
-  <a>{{product.title}}</a>
+<mat-list-item class="product-list-item" *ngIf="product">
+  <img class="thumbnail" src="{{product.thumbnail}}" />
+  <a class="title">{{product.title}}</a>
 </mat-list-item>
