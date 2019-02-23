@@ -29,8 +29,9 @@ export class ProductService {
    */
   async getProductById(id: string): Promise<Product> {
     await this.getAll();
-    return new Promise(async (resolve, reject) => {
-      resolve(this.productList.find((item) => item.id === id));
+    return new Promise<Product>((resolve, reject) => {
+      const result = this.productList.find((item: Product) => item.id === id);
+      resolve(result as Product);
     });
   }
 
