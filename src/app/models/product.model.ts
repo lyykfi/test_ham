@@ -2,7 +2,7 @@
  * An product model.
  */
 export class Product {
-  id: number;
+  id: string;
   title: string;
   zipCode: string;
   city: string;

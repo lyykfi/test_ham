@@ -1,16 +1,17 @@
-import { AppPage } from './app.po';
+import { CatalogPage } from './catalog.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
+describe('Test CatalogPage', () => {
+  let page: CatalogPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new CatalogPage();
   });
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to angular-test!');
+    console.log(page.getProductListItems());
+    // expect(page.getProductListItems()).toEqual('Welcome to angular-test!');
   });
 
   afterEach(async () => {

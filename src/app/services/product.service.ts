@@ -27,9 +27,9 @@ export class ProductService {
    * Gets product by id.
    * @param id - product id.
    */
-  getProductById(id: number): Promise<Product> {
+  async getProductById(id: string): Promise<Product> {
+    await this.getAll();
     return new Promise(async (resolve, reject) => {
-      await this.getAll();
       resolve(this.productList.find((item) => item.id === id));
     });
   }

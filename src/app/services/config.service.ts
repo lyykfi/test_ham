@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 /**
  * ConfigService service.
@@ -20,7 +21,7 @@ export class ConfigService {
   /**
    * Gets config.
    */
-  getConfig() {
+  getConfig(): Observable<any> {
     return this.http.get(this.configUrl);
   }
 }
